@@ -16,6 +16,15 @@ class LoginState extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool _passwordVisible = false;
+
+  bool get passwordVisible => _passwordVisible;
+
+  set passwordVisible(bool passwordVisible) {
+    _passwordVisible = passwordVisible;
+    notifyListeners();
+  }
+
   void login(BuildContext context) async {
     isLoading = true;
     try {
@@ -27,6 +36,7 @@ class LoginState extends ChangeNotifier {
       if (userCredential.user != null) {
         // ignore: use_build_context_synchronously
         Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
+        toast('Login Sucessfully');
       }
       isLoading = false;
     } on FirebaseAuthException catch (e) {

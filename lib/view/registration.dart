@@ -17,6 +17,7 @@ class RegistrationView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: whiteColor,
       appBar: const CommonAppBar(),
       body: SingleChildScrollView(
         child: Form(
@@ -73,7 +74,14 @@ class RegistrationView extends StatelessWidget {
                   25.0.spaceY,
                   TextfieldWithText(
                     hintText: "Password",
-                    suffixIcon: const Icon(Icons.remove_red_eye),
+                    obscureText: regState.passwordVisible,
+                    suffixIcon: InkWell(
+                        onTap: () {
+                          regState.passwordVisible = !regState.passwordVisible;
+                        },
+                        child: regState.passwordVisible == false
+                            ? const Icon(Icons.visibility)
+                            : const Icon(Icons.visibility_off)),
                     labelText: "Password",
                     textEditingController: regState.userPasswordController,
                     validator: (value) {

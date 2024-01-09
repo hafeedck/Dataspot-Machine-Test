@@ -3,6 +3,7 @@ import 'package:dataspot_machine_test/common_widgets/colors/colors.dart';
 import 'package:dataspot_machine_test/common_widgets/text/text.dart';
 import 'package:dataspot_machine_test/common_widgets/textfield/textfield_with_text.dart';
 import 'package:dataspot_machine_test/controller/login_controller.dart';
+import 'package:dataspot_machine_test/controller/registration_controller.dart';
 import 'package:dataspot_machine_test/extensions/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final LoginState loginState = Provider.of<LoginState>(context);
+    final RegistrationState regState = Provider.of<RegistrationState>(context);
     GlobalKey<FormState>? myFormKey = GlobalKey<FormState>();
 
     return Scaffold(
@@ -51,7 +53,15 @@ class LoginView extends StatelessWidget {
                 25.0.spaceY,
                 TextfieldWithText(
                   hintText: "Enter password",
-                  suffixIcon: const Icon(Icons.remove_red_eye),
+                  obscureText: loginState.passwordVisible,
+                  suffixIcon: InkWell(
+                      onTap: () {
+                        loginState.passwordVisible =
+                            !loginState.passwordVisible;
+                      },
+                      child: loginState.passwordVisible == false
+                          ? const Icon(Icons.visibility)
+                          : const Icon(Icons.visibility_off)),
                   labelText: "Password",
                   textEditingController: loginState.passwordController,
                   validator: (value) {
@@ -81,6 +91,7 @@ class LoginView extends StatelessWidget {
                     5.0.spaceX,
                     InkWell(
                       onTap: () {
+                        regState.clear();
                         Navigator.pushNamed(
                           context,
                           '/registration',

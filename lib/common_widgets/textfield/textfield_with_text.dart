@@ -49,7 +49,6 @@ class TextfieldWithText extends StatelessWidget {
           enabled: isEnable ?? true,
           style: const TextStyle(fontSize: 16),
           expands: expands!,
-          maxLines: null,
           onTap: onTap == null
               ? null
               : () {

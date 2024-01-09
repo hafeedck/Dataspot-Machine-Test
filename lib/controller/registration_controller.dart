@@ -18,6 +18,15 @@ class RegistrationState extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool _passwordVisible = false;
+
+  bool get passwordVisible => _passwordVisible;
+
+  set passwordVisible(bool passwordVisible) {
+    _passwordVisible = passwordVisible;
+    notifyListeners();
+  }
+
   void signupUser(BuildContext context) async {
     isLoading = true;
     try {
