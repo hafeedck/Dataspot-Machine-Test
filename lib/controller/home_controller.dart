@@ -8,6 +8,7 @@ class HomeState extends ChangeNotifier {
   List<User> allusersData = [];
 
   TextEditingController userSearchController = TextEditingController();
+  // ignore: unnecessary_getters_setters
   bool get isLoading => _isLoading;
 
   set isLoading(bool isLoading) {
