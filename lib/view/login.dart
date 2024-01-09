@@ -22,6 +22,7 @@ class LoginView extends StatelessWidget {
         elevation: 0,
         bottomOpacity: 0,
       ),
+      backgroundColor: whiteColor,
       body: Form(
         key: myFormKey,
         child: SingleChildScrollView(
