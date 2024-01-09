@@ -25,14 +25,23 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: whiteColor,
-        body: Center(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [greyColor, whiteColor, primaryColor],
+          ),
+        ),
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              commonText("DATA SPOT", fontSize: 35, color: primaryColor)
+              homeTitle("DATA SPOT"),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

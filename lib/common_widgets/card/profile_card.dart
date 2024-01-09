@@ -53,7 +53,7 @@ class ProfileCard extends StatelessWidget {
                   width: size.width * 0.5,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Colors.blueGrey.withOpacity(0.2)),
+                      color: bluGreyColor.withOpacity(0.2)),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
