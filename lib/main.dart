@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         routes: routes,
         title: "Dataspot Machine Test",
         initialRoute: '/splash',
+        theme: ThemeData(useMaterial3: false),
       ),
     );
   }
