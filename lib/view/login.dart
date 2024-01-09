@@ -19,6 +19,8 @@ class LoginView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: whiteColor,
+        elevation: 0,
+        bottomOpacity: 0,
       ),
       body: Form(
         key: myFormKey,
