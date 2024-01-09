@@ -18,6 +18,7 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: whiteColor,
       ),
       body: Form(
         key: myFormKey,
